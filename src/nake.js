@@ -411,14 +411,14 @@ var global = this;
     print("Tasks defined in ${nakefile.getAbsolutePath()}\n");
     var length = 0;
     for (var taskName in tasks) {
-      if (taskName.length() > length) {
-        length = taskName.length();
+      if (taskName.length > length) {
+        length = taskName.length;
       }
     }
 
     for each (var task in tasks) {
       var name = task.name;
-      while (name.length() < length) {
+      while (name.length < length) {
         name += " ";
       }
       var line = "   ${name}   ${task.description}";
